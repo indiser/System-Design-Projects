@@ -354,7 +354,7 @@ Feel free to add:
 
 ---
 
-**Last Updated:** February 2026
-**Status:** In Progress
-**Current Phase:** Phase 1 - Foundation Building
-**Timeline:** 12-Month Intensive Program
+- **Last Updated:** February 2026
+- **Status:** In Progress
+- **Current Phase:** Phase 1 - Foundation Building
+- **Timeline:** 12-Month Intensive Program
