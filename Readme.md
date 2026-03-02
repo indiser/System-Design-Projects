@@ -17,6 +17,21 @@ This repository contains a structured 12-month learning path for system design, 
 - **Rust** - Memory safety, concurrent systems
 - **Go** - Cloud-native applications, microservices
 
+## 🗣️ Language Progression Strategy
+
+| Phase | Primary Language | Secondary Language | Purpose |
+|-------|------------------|-------------------|----------|
+| **Phase 1** (Months 1-2) | Python | - | Quick prototyping, design validation |
+| **Phase 2** (Months 3-4) | C++ | Python | Core systems (C++), APIs & scripts (Python) |
+| **Phase 3** (Months 5-6) | C++ | Python | Advanced implementations, performance optimization |
+| **Phase 4** (Months 7-12) | C++ | Java/Rust/Go | Production-ready systems, multi-language implementations |
+
+**Key Guidelines:**
+- **Phase 1:** Use Python for rapid iteration and design exploration
+- **Phase 2+:** Shift to C++ for performance-critical components; Python for APIs, scripts, and tooling
+- **Phase 4:** Implement 1-2 projects in Java/Rust/Go to understand language-specific patterns
+- **Multi-Language:** Each project folder can have subdirectories (e.g., `cpp/`, `python/`, `java/`) for different implementations
+
 ## 📚 Learning Path
 
 ### Phase 1: Foundation Building (Months 1-2)
@@ -354,7 +369,7 @@ Feel free to add:
 
 ---
 
-- **Last Updated:** February 2026
+- **Last Updated:** March 2026
 - **Status:** In Progress
 - **Current Phase:** Phase 1 - Foundation Building
 - **Timeline:** 12-Month Intensive Program
