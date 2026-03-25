@@ -109,23 +109,163 @@ This repository contains a structured 12-month learning path for system design, 
 
 ### Phase 4: Mastery & Interview Preparation (Months 7-12)
 
-#### Milestone Projects (with C++ Focus)
-- [ ] URL Shortener Service
-- [ ] Distributed Cache (Mini Redis)
-- [ ] Chat Application (real-time)
-- [ ] Rate Limiter Service
-- [ ] Search Engine with Web Crawler
-- [ ] Social Network Platform
-- [ ] Stock Trading Platform
-- [ ] Video Streaming Backend
-- [ ] Machine Learning Model Serving API
-- [ ] Database Engine Core
+#### FAANG Interview Focus Areas
 
-#### Weekly Routine
-- Day 1-3: Learn 1-2 concepts, design sketches, AI Q&A
-- Day 4-5: Code one project feature, profile & optimize it
-- Day 6: Mock interview (AI/peer) and system teardown
-- Day 7: Refactor code, document trade-offs, track learnings
+**What FAANG Actually Tests:**
+1. **Requirement Clarification** - Can you ask the right questions? (30% of score)
+   - Functional vs non-functional requirements
+   - Scale assumptions (DAU, QPS, data volume)
+   - Geographic distribution, SLA expectations
+   - Cost vs performance trade-offs
+
+2. **High-Level Architecture** - Can you design at scale? (40% of score)
+   - Component selection with justification
+   - Data flow and communication patterns
+   - Bottleneck identification and mitigation
+   - Trade-off analysis (consistency vs availability, latency vs throughput)
+
+3. **Deep Dives** - Can you go deep on one component? (20% of score)
+   - Database schema design and indexing
+   - Caching strategies and eviction policies
+   - Load balancing algorithms
+   - Replication and failover mechanisms
+
+4. **Communication** - Can you explain clearly? (10% of score)
+   - Justify every decision
+   - Acknowledge trade-offs upfront
+   - Adapt to interviewer feedback
+   - Use concrete numbers and calculations
+
+#### Core Projects (Pick 5, Implement 3 Fully)
+
+**Tier 1: Most Asked (Do These First)**
+- [ ] **Distributed Cache (Mini Redis)** - C++
+  - LRU/LFU eviction, TTL, persistence, replication
+  - Why: Tests data structures, concurrency, memory management
+  - FAANG angle: How would you handle 1M QPS? Cluster mode?
+
+- [ ] **Rate Limiter Service** - C++
+  - Token bucket, sliding window, distributed coordination
+  - Why: Tests algorithm design and distributed state
+  - FAANG angle: How to rate limit across multiple servers?
+
+- [ ] **URL Shortener** - C++
+  - Encoding, collision handling, analytics, redirect optimization
+  - Why: Tests database design, caching, and trade-offs
+  - FAANG angle: How to handle 1B+ URLs? Geo-distributed?
+
+**Tier 2: Frequently Asked (Do 1-2)**
+- [ ] **Real-Time Chat Application** - C++ backend + Python API
+  - WebSocket handling, message ordering, presence, notifications
+  - Why: Tests real-time systems, message queues, consistency
+  - FAANG angle: How to scale to 100M concurrent users?
+
+- [ ] **Search Engine with Crawler** - C++
+  - Crawling strategy, inverted index, ranking, distributed indexing
+  - Why: Tests large-scale data processing and search algorithms
+  - FAANG angle: How to handle 1B+ documents? Real-time updates?
+
+**Tier 3: Advanced (Do 1)**
+- [ ] **Stock Trading Platform** - C++
+  - Order matching engine, risk management, low-latency execution
+  - Why: Tests performance optimization and complex state management
+  - FAANG angle: How to process 1M orders/sec with <1ms latency?
+
+- [ ] **Video Streaming Backend** - C++
+  - Adaptive bitrate, CDN integration, transcoding, analytics
+  - Why: Tests large-scale media delivery and optimization
+  - FAANG angle: How to serve 1B+ concurrent streams?
+
+#### Interview Preparation Strategy
+
+**Months 7-8: Deep Implementation**
+- Pick 3 projects from Tier 1 + Tier 2
+- Implement each with production-quality code
+- Profile and optimize for 10x scale
+- Document all trade-off decisions
+
+**Months 9-10: Communication & Depth**
+- Practice explaining designs in 45 minutes
+- Record yourself, identify weak areas
+- Do 2 mock interviews/week with AI or peers
+- Focus on: requirement clarification, trade-off justification, deep dives
+
+**Months 11-12: Interview Simulation**
+- Weekly mock interviews (timed, with feedback)
+- Practice with different interviewers (different styles)
+- Study FAANG-specific patterns:
+  - **Google:** Scalability, distributed systems, data processing
+  - **Amazon:** Microservices, operational excellence, cost optimization
+  - **Meta:** Real-time systems, graph algorithms, mobile-first
+  - **Apple:** Privacy, security, offline-first design
+  - **Microsoft:** Enterprise patterns, cloud integration, reliability
+
+#### Weekly Routine (Months 7-12)
+- **Day 1-2:** Deep dive on one component (database indexing, load balancing, etc.)
+- **Day 3:** Implement feature in project, profile for bottlenecks
+- **Day 4:** Optimize based on profiling results
+- **Day 5:** Mock interview (45 min design + 15 min feedback)
+- **Day 6:** Study one FAANG case study (how they solved similar problem)
+- **Day 7:** Refactor code, document trade-offs, update portfolio
+
+#### FAANG-Specific Patterns to Master
+
+**Google-Style Questions:**
+- Massive scale (billions of users/data)
+- Focus on distributed systems and consensus
+- Deep dives on algorithms and data structures
+- Example: "Design YouTube" → Expect questions on video encoding, CDN, recommendation algorithm
+
+**Amazon-Style Questions:**
+- Operational concerns (monitoring, logging, failover)
+- Cost optimization and resource efficiency
+- Microservices and service boundaries
+- Example: "Design e-commerce platform" → Expect questions on inventory management, payment processing, order tracking
+
+**Meta-Style Questions:**
+- Real-time features and low latency
+- Graph algorithms and social features
+- Mobile and web client considerations
+- Example: "Design Instagram" → Expect questions on feed ranking, real-time notifications, media optimization
+
+**Apple-Style Questions:**
+- Privacy and security by design
+- Offline-first and sync mechanisms
+- End-to-end encryption
+- Example: "Design iCloud sync" → Expect questions on conflict resolution, encryption, bandwidth optimization
+
+**Microsoft-Style Questions:**
+- Enterprise scalability and reliability
+- Integration with existing systems
+- Multi-tenant architecture
+- Example: "Design Teams" → Expect questions on real-time collaboration, security, scalability
+
+#### Portfolio Presentation
+
+For each project, prepare:
+1. **Architecture Diagram** - Clear component relationships
+2. **Trade-off Analysis** - Why this choice over alternatives?
+3. **Scalability Plan** - How to 10x the system?
+4. **Performance Metrics** - Latency, throughput, resource usage
+5. **Code Quality** - Clean, well-tested, documented
+6. **Lessons Learned** - What would you do differently?
+
+#### Red Flags to Avoid
+- Designing without clarifying requirements
+- Choosing technologies without justification
+- Ignoring trade-offs ("this is perfect")
+- Not thinking about failure scenarios
+- Over-engineering for current scale
+- Vague explanations ("we use a database")
+
+#### Green Flags That Impress
+- Asking clarifying questions upfront
+- Mentioning trade-offs proactively
+- Calculating capacity and identifying bottlenecks
+- Discussing monitoring and observability
+- Considering failure modes and recovery
+- Adapting design based on feedback
+- Using concrete numbers (QPS, latency, storage)
 
 ## 📁 Project Structure
 
