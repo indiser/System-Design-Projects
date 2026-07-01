@@ -1,0 +1,8 @@
+flask
+flask_sqlalchemy
+Flask-WTF
+upstash-redis
+python-dotenv
+psycopg2-binary
+pybloom-live
+gunicorn
