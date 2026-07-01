@@ -1,4 +1,4 @@
-# 🔗 Shwaty
+# 🔗 Shawty
 
 > **A production-grade URL shortening system designed to handle billions of URLs with sub-millisecond redirect latency**
 
