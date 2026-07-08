@@ -176,6 +176,80 @@ This repository contains a structured 12-month learning path for system design, 
   - Why: Tests large-scale media delivery and optimization
   - FAANG angle: How to serve 1B+ concurrent streams?
 
+## ✅ Complete Project Checklist
+
+### Phase 1: Foundation Building (Months 1-2)
+
+#### Month 1 Projects
+- [x] URL Shortener (theoretical)
+- [ ] Basic cache layer implementation
+- [ ] Familiar app mapping (like Twitter)
+- [ ] Sharding and replication strategies
+
+#### Month 2 Projects
+- [ ] API design patterns
+- [ ] CAP theorem implementation
+- [ ] Consistency model exploration
+
+### Phase 2: Intermediate Concepts (Months 3-4)
+
+- [ ] Distributed cache system (with eviction)
+- [ ] Real-time chat app (WebSocket, queue)
+- [ ] Rate limiter service
+- [ ] Search engines (Crawling, inverted indexes, relevance scoring)
+- [ ] Recommendation engines (Collaborative filtering basics)
+- [ ] Collaborative editing (Locking, version control, real-time presence)
+- [ ] Streaming analytics (Handling TBs of real-time data)
+
+### Phase 3: Advanced Design (Months 5-6)
+
+- [ ] Scalable crawler/search engine
+- [ ] Stock trading platform (matching engine, risk)
+- [ ] Social network (relationships, notifications)
+- [ ] Machine learning serving infrastructure
+- [ ] Video streaming backend
+- [ ] Database engine core
+
+### Phase 4: Mastery & Interview Preparation (Months 7-12)
+
+#### Tier 1: Most Asked (Priority)
+- [ ] Distributed Cache (Mini Redis) - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+- [ ] Rate Limiter Service - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+- [ ] URL Shortener - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+
+#### Tier 2: Frequently Asked
+- [ ] Real-Time Chat Application - C++ backend + Python API
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+- [ ] Search Engine with Crawler - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+
+#### Tier 3: Advanced
+- [ ] Stock Trading Platform - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+- [ ] Video Streaming Backend - C++
+  - Status: Not Started | Design: ☐ | Implementation: ☐ | Optimization: ☐ | Documentation: ☐
+
+#### Interview Preparation
+- [ ] Mock Interview 1 (Months 7-8)
+- [ ] Mock Interview 2 (Months 9-10)
+- [ ] Mock Interview 3 (Months 11-12)
+- [ ] FAANG Case Study: Google
+- [ ] FAANG Case Study: Amazon
+- [ ] FAANG Case Study: Meta
+- [ ] FAANG Case Study: Apple
+- [ ] FAANG Case Study: Microsoft
+
+#### Portfolio & Documentation
+- [ ] Architecture Diagrams (all projects)
+- [ ] Trade-off Analysis (all projects)
+- [ ] Scalability Plans (all projects)
+- [ ] Performance Metrics (all projects)
+- [ ] Code Quality Review (all projects)
+- [ ] Lessons Learned (all projects)
+
 #### Interview Preparation Strategy
 
 **Months 7-8: Deep Implementation**
@@ -509,7 +583,7 @@ Feel free to add:
 
 ---
 
-- **Last Updated:** March 2026
+- **Last Updated:** July 2026
 - **Status:** In Progress
 - **Current Phase:** Phase 1 - Foundation Building
 - **Timeline:** 12-Month Intensive Program
