@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SysDesign</title>
+  <meta name="description" content="A comprehensive 12-month guide to mastering system design from foundational concepts to FAANG interview mastery.">
+  
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="System Design Learning Roadmap">
+  <meta property="og:description" content="A comprehensive 12-month guide to mastering system design from foundational concepts to FAANG interview mastery.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/indiser/System-Design-Projects">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="System Design Learning Roadmap">
+  <meta name="twitter:description" content="A comprehensive 12-month guide to mastering system design from foundational concepts to FAANG interview mastery.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://github.com/indiser/System-Design-Projects">
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" as="style">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+
+  <script>
+    // Inline script to prevent theme flash
+    try {
+      const storedTheme = localStorage.getItem('nb-theme');
+      if (storedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else if (storedTheme === 'light') {
+        // Do nothing, default
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nb-header">
+    <div class="nb-container nb-nav-container">
+      <a href="#" class="nb-nav-brand">
+        <!-- SVG Logo Icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+          <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+          <line x1="6" y1="6" x2="6.01" y2="6"></line>
+          <line x1="6" y1="18" x2="6.01" y2="18"></line>
+        </svg>
+        SysDesign
+      </a>
+
+      <nav class="nb-nav-links">
+        <a href="#journey" class="nb-nav-link">Journey</a>
+        <a href="#projects" class="nb-nav-link">Projects</a>
+        <a href="#faang" class="nb-nav-link">FAANG Prep</a>
+        <a href="#resources" class="nb-nav-link">Resources</a>
+        <a href="#tracker" class="nb-button nb-button--primary">Track Progress</a>
+        
+        <!-- Theme Toggle -->
+        <button class="nb-theme-toggle nb-button nb-button--secondary" style="padding: 0 12px; min-height: 40px;" aria-label="Toggle theme">
+          <svg class="nb-icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <svg class="nb-icon-moon" style="display: block;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+
+      <button class="nb-hamburger" aria-label="Open mobile menu" aria-expanded="false">
+        <span class="nb-hamburger-line"></span>
+        <span class="nb-hamburger-line"></span>
+        <span class="nb-hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nb-mobile-menu">
+      <a href="#journey" class="nb-nav-link">Journey</a>
+      <a href="#projects" class="nb-nav-link">Projects</a>
+      <a href="#faang" class="nb-nav-link">FAANG Prep</a>
+      <a href="#resources" class="nb-nav-link">Resources</a>
+      <a href="#tracker" class="nb-button nb-button--primary">Track Progress</a>
+      
+      <button class="nb-theme-toggle nb-button nb-button--secondary" style="margin-top: 16px;">
+        <svg class="nb-icon-sun" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+        <svg class="nb-icon-moon" style="display: block;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        Toggle Theme
+      </button>
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- 1. Hero Section (Split Layout) -->
+    <section class="nb-section" id="hero">
+      <div class="nb-container nb-split">
+        <div class="nb-reveal">
+          <div class="nb-badge nb-badge--purple nb-mb-4">12-Month Intensive Program</div>
+          <h1 class="nb-display">Master System Design.</h1>
+          <p class="nb-h3">A comprehensive guide from foundational concepts to advanced distributed systems architecture, accelerated by AI.</p>
+          <div class="nb-flex nb-gap-4 nb-mt-6" style="flex-wrap: wrap;">
+            <a href="#journey" class="nb-button nb-button--primary">Start Learning</a>
+            <a href="#resources" class="nb-button nb-button--secondary">Explore Resources</a>
+          </div>
+        </div>
+        <div class="nb-reveal" style="transition-delay: 150ms;">
+          <!-- Using the generated image -->
+          <div class="nb-mockup">
+            <div class="nb-mockup__header">
+              <div class="nb-mockup__dot"></div>
+              <div class="nb-mockup__dot"></div>
+              <div class="nb-mockup__dot"></div>
+            </div>
+            <img src="assets/images/hero.png" alt="Neo-Brutalist illustration of a system design roadmap" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;" loading="eager" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Why System Design (Spotlight Banner) -->
+    <section class="nb-section nb-bg-warm">
+      <div class="nb-container nb-reveal">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <h2 class="nb-h1 nb-mb-4">Beyond the Code.</h2>
+          <p class="nb-h3" style="margin: 0 auto;">"System design is not about memorizing solutions. It's about understanding trade-offs, thinking at scale, and designing systems that survive reality."</p>
+          <div class="nb-mt-6">
+            <span class="nb-badge nb-badge--blue">Scalability</span>
+            <span class="nb-badge nb-badge--green">Reliability</span>
+            <span class="nb-badge nb-badge--yellow">Performance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Learning Journey (Interactive Vertical Timeline) -->
+    <section class="nb-section" id="journey">
+      <div class="nb-container">
+        <h2 class="nb-h2 nb-text-center nb-mb-8 nb-reveal">The 12-Month Journey</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto; position: relative;">
+          <!-- Timeline line -->
+          <div style="position: absolute; left: 24px; top: 0; bottom: 0; width: 3px; background-color: var(--nb-border); z-index: 0;" class="nb-md-block nb-hidden"></div>
+          
+          <div data-stagger class="nb-flex-col nb-gap-6">
+            <!-- Phase 1 -->
+            <div class="nb-card nb-reveal" style="position: relative; z-index: 1;">
+              <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+                <span class="nb-badge nb-badge--blue">Phase 1 (Months 1-2)</span>
+                <span class="nb-mono">Foundation</span>
+              </div>
+              <h3 class="nb-h3">Core Concepts & Architecture</h3>
+              <p>Monoliths vs microservices, CAP theorem, API basics, and essential design frameworks.</p>
+              <ul class="nb-mt-4">
+                <li>URL Shortener (theoretical)</li>
+                <li>Basic cache layer implementation</li>
+              </ul>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="nb-card nb-reveal" style="position: relative; z-index: 1;">
+              <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+                <span class="nb-badge nb-badge--green">Phase 2 (Months 3-4)</span>
+                <span class="nb-mono">Intermediate</span>
+              </div>
+              <h3 class="nb-h3">Advanced Scalability Patterns</h3>
+              <p>Event-driven processing, rate limiting, CQRS, and service discovery.</p>
+              <ul class="nb-mt-4">
+                <li>Distributed cache system</li>
+                <li>Real-time chat app</li>
+              </ul>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="nb-card nb-reveal" style="position: relative; z-index: 1;">
+              <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+                <span class="nb-badge nb-badge--yellow">Phase 3 (Months 5-6)</span>
+                <span class="nb-mono">Advanced</span>
+              </div>
+              <h3 class="nb-h3">Large Systems & Specializations</h3>
+              <p>Multi-region deployments, advanced transactions, and company-specific studies.</p>
+              <ul class="nb-mt-4">
+                <li>Scalable crawler/search engine</li>
+                <li>Video streaming backend</li>
+              </ul>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="nb-card nb-reveal nb-card--warm" style="position: relative; z-index: 1;">
+              <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+                <span class="nb-badge nb-badge--red" style="background-color: var(--nb-accent-red); color: white;">Phase 4 (Months 7-12)</span>
+                <span class="nb-mono">Mastery</span>
+              </div>
+              <h3 class="nb-h3">FAANG Interview Preparation</h3>
+              <p>Deep dives, mock interviews, and mastering communication and trade-offs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Language Progression (Bento Grid) -->
+    <section class="nb-section">
+      <div class="nb-container">
+        <h2 class="nb-h2 nb-mb-6 nb-reveal">Language Progression Strategy</h2>
+        
+        <div class="nb-grid" data-stagger>
+          <!-- Python Block -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <h3 class="nb-h3 nb-flex nb-items-center nb-gap-2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+              Python
+            </h3>
+            <p><strong>Phase 1:</strong> Rapid prototyping, scripting, data processing, and API design validation.</p>
+          </div>
+
+          <!-- C++ Block (Larger Focus) -->
+          <div class="nb-card nb-bg-warm nb-col-span-full nb-lg-col-span-8 nb-reveal">
+            <div class="nb-badge nb-badge--blue nb-mb-2">Primary Core</div>
+            <h3 class="nb-h2 nb-flex nb-items-center nb-gap-2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              C++
+            </h3>
+            <p class="nb-h3"><strong>Phase 2+:</strong> Shift to C++ for performance-critical components. Systems programming, memory management, and high-concurrency.</p>
+          </div>
+
+          <!-- Enterprise block -->
+          <div class="nb-card nb-col-span-full nb-reveal" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <h3 class="nb-h3">Phase 4 Expansion: Java / Rust / Go</h3>
+            <p style="margin:0;">Implement projects in secondary languages to understand language-specific patterns (Enterprise scalability, Memory safety, Cloud-native microservices).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Project Showcase (Masonry / Complex Grid) -->
+    <section class="nb-section" id="projects">
+      <div class="nb-container">
+        <h2 class="nb-h2 nb-mb-6 nb-reveal">Implementation Projects</h2>
+        
+        <div class="nb-grid" data-stagger>
+          <!-- Core Mini Redis -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-6 nb-reveal">
+            <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+              <span class="nb-badge nb-badge--yellow">Tier 1</span>
+              <span class="nb-mono">C++</span>
+            </div>
+            <h3 class="nb-h3">Distributed Cache (Mini Redis)</h3>
+            <p>LRU/LFU eviction, TTL, persistence, replication. Tests data structures, concurrency, memory management.</p>
+            <div class="nb-mt-4 nb-flex nb-gap-2">
+              <span class="nb-badge nb-badge--blue">1M QPS</span>
+              <span class="nb-badge">Cluster Mode</span>
+            </div>
+          </div>
+
+          <!-- URL Shortener -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-6 nb-reveal">
+            <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+              <span class="nb-badge nb-badge--yellow">Tier 1</span>
+              <span class="nb-mono">C++</span>
+            </div>
+            <h3 class="nb-h3">URL Shortener</h3>
+            <p>Encoding, collision handling, analytics, redirect optimization. Tests DB design and caching.</p>
+            <div class="nb-mt-4 nb-flex nb-gap-2">
+              <span class="nb-badge nb-badge--green">1B+ URLs</span>
+            </div>
+          </div>
+
+          <!-- Real-Time Chat -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+              <span class="nb-badge nb-badge--purple">Tier 2</span>
+              <span class="nb-mono">C++ / Python</span>
+            </div>
+            <h3 class="nb-h3">Real-Time Chat</h3>
+            <p>WebSocket handling, message ordering, presence. Scaling to 100M concurrent users.</p>
+          </div>
+
+          <!-- Search Engine -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+              <span class="nb-badge nb-badge--purple">Tier 2</span>
+              <span class="nb-mono">C++</span>
+            </div>
+            <h3 class="nb-h3">Search Engine</h3>
+            <p>Crawling strategy, inverted index, ranking, distributed indexing. Handling 1B+ documents.</p>
+          </div>
+          
+          <!-- Stock Trading -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal nb-card--warm">
+            <div class="nb-flex nb-justify-between nb-items-center nb-mb-4">
+              <span class="nb-badge">Tier 3</span>
+              <span class="nb-mono">C++</span>
+            </div>
+            <h3 class="nb-h3">Stock Trading Platform</h3>
+            <p>Order matching engine, risk management, low-latency execution (&lt;1ms).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAANG Preparation (Large Showcase) -->
+    <section class="nb-section nb-bg-blue" id="faang">
+      <div class="nb-container">
+        <div class="nb-split">
+          <div class="nb-reveal">
+            <h2 class="nb-h1">FAANG Focus Areas</h2>
+            <p class="nb-h3">What big tech actually tests during a system design interview.</p>
+            
+            <ul class="nb-mt-6" style="list-style-type: none; padding-left: 0;">
+              <li class="nb-mb-4">
+                <strong>1. Requirement Clarification (30%)</strong><br>
+                Scale assumptions, SLA, cost vs performance.
+              </li>
+              <li class="nb-mb-4">
+                <strong>2. High-Level Architecture (40%)</strong><br>
+                Component selection, data flow, bottlenecks.
+              </li>
+              <li class="nb-mb-4">
+                <strong>3. Deep Dives (20%)</strong><br>
+                DB schemas, caching strategies, load balancing.
+              </li>
+              <li>
+                <strong>4. Communication (10%)</strong><br>
+                Justify decisions, acknowledge trade-offs upfront.
+              </li>
+            </ul>
+          </div>
+          
+          <div class="nb-reveal" style="transition-delay: 200ms;">
+            <div class="nb-mockup">
+              <div class="nb-mockup__header">
+                <span class="nb-mono">Company Patterns</span>
+              </div>
+              <div class="nb-p-6" style="background: white;">
+                <div class="nb-accordion">
+                  <button class="nb-accordion__header">
+                    Google
+                    <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                  <div class="nb-accordion__content">
+                    <div class="nb-accordion__content-inner">
+                      Massive scale, consensus, deep dives on algorithms. (e.g., Design YouTube)
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="nb-accordion">
+                  <button class="nb-accordion__header">
+                    Amazon
+                    <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                  <div class="nb-accordion__content">
+                    <div class="nb-accordion__content-inner">
+                      Microservices, operational excellence, cost optimization. (e.g., E-commerce platform)
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="nb-accordion">
+                  <button class="nb-accordion__header">
+                    Meta
+                    <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </button>
+                  <div class="nb-accordion__content">
+                    <div class="nb-accordion__content-inner">
+                      Real-time features, graph algorithms, low latency. (e.g., Design Instagram)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Technologies Ecosystem -->
+    <section class="nb-section">
+      <div class="nb-container">
+        <h2 class="nb-h2 nb-text-center nb-mb-8 nb-reveal">Core Technologies</h2>
+        
+        <div class="nb-grid" style="align-items: center;" data-stagger>
+          <!-- DBs -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <h3 class="nb-h3">Databases</h3>
+            <ul class="nb-mt-4">
+              <li><strong>Relational:</strong> PostgreSQL, MySQL</li>
+              <li><strong>NoSQL:</strong> MongoDB, Cassandra</li>
+              <li><strong>In-Memory:</strong> Redis, Memcached</li>
+              <li><strong>Search:</strong> Elasticsearch</li>
+            </ul>
+          </div>
+          
+          <!-- Messaging -->
+          <div class="nb-card nb-bg-warm nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <h3 class="nb-h3">Messaging & Streaming</h3>
+            <ul class="nb-mt-4">
+              <li>RabbitMQ</li>
+              <li>Apache Kafka</li>
+              <li>AWS SQS</li>
+              <li>Apache Flink</li>
+            </ul>
+          </div>
+          
+          <!-- Infra -->
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-reveal">
+            <h3 class="nb-h3">Infra & DevOps</h3>
+            <ul class="nb-mt-4">
+              <li>Docker, Kubernetes</li>
+              <li>AWS, GCP, Azure</li>
+              <li>Terraform</li>
+              <li>Prometheus, Grafana</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. AI Learning Strategy (Accordion) -->
+    <section class="nb-section nb-bg-surface">
+      <div class="nb-container nb-reveal">
+        <h2 class="nb-h2 nb-mb-6">AI-Assisted Learning Strategy</h2>
+        
+        <div style="max-width: 800px;">
+          <div class="nb-accordion" data-group="ai">
+            <button class="nb-accordion__header">
+              1. Decompose Hard Problems
+              <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="nb-accordion__content">
+              <div class="nb-accordion__content-inner">
+                Prompt AI to break down requirements, functional needs, and clarify trade-offs before starting.
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-accordion" data-group="ai">
+            <button class="nb-accordion__header">
+              2. Solution Brainstorming
+              <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="nb-accordion__content">
+              <div class="nb-accordion__content-inner">
+                Ask AI for multiple high-level architectures with pros/cons and cost/performance impacts.
+              </div>
+            </div>
+          </div>
+
+          <div class="nb-accordion" data-group="ai">
+            <button class="nb-accordion__header">
+              3. Mock Interviews
+              <svg class="nb-accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="nb-accordion__content">
+              <div class="nb-accordion__content-inner">
+                Practice with AI-as-interviewer for system design (timed, with critique and follow-ups).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Resources (Filterable Bento) -->
+    <section class="nb-section" id="resources">
+      <div class="nb-container">
+        <div class="nb-flex nb-justify-between nb-items-center nb-mb-6" style="flex-wrap: wrap; gap: 16px;">
+          <h2 class="nb-h2" style="margin: 0;">Resources</h2>
+          <div class="nb-flex nb-gap-2">
+            <button class="nb-button nb-button--primary nb-filter-btn" data-filter="all">All</button>
+            <button class="nb-button nb-button--secondary nb-filter-btn" data-filter="books">Books</button>
+            <button class="nb-button nb-button--secondary nb-filter-btn" data-filter="courses">Courses</button>
+          </div>
+        </div>
+        
+        <div class="nb-mb-6">
+          <input type="text" id="resource-search" class="nb-input" placeholder="Search resources..." aria-label="Search resources">
+        </div>
+        
+        <div class="nb-grid">
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-resource-card" data-category="courses" data-title="grokking the system design interview">
+            <span class="nb-badge nb-badge--purple nb-mb-2">Course</span>
+            <h3 class="nb-h3">Grokking System Design</h3>
+            <p>Educative.io premium course.</p>
+          </div>
+          
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-resource-card" data-category="books" data-title="designing data-intensive applications">
+            <span class="nb-badge nb-badge--blue nb-mb-2">Book</span>
+            <h3 class="nb-h3">Designing Data-Intensive Apps</h3>
+            <p>By Martin Kleppmann. The definitive guide.</p>
+          </div>
+          
+          <div class="nb-card nb-col-span-full nb-lg-col-span-4 nb-resource-card" data-category="books" data-title="system design interview alex xu">
+            <span class="nb-badge nb-badge--blue nb-mb-2">Book</span>
+            <h3 class="nb-h3">System Design Interview</h3>
+            <p>By Alex Xu. ByteByteGo framework.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Progress Tracker -->
+    <section class="nb-section nb-bg-warm" id="tracker">
+      <div class="nb-container nb-reveal">
+        <h2 class="nb-h2 nb-mb-6">Your Progress Tracker</h2>
+        
+        <div class="nb-card" style="background-color: var(--nb-bg);">
+          <div class="nb-flex nb-justify-between nb-mb-2">
+            <strong class="nb-progress-text">0 / 4 Completed</strong>
+          </div>
+          <div style="width: 100%; height: 16px; background-color: var(--nb-surface); border: var(--nb-border-w-sm) solid var(--nb-border); border-radius: var(--nb-radius-pill); overflow: hidden;">
+            <div class="nb-progress-bar-fill" style="width: 0%; height: 100%; background-color: var(--nb-accent-green); transition: width var(--nb-duration-slow) var(--nb-ease-out); border-right: var(--nb-border-w-sm) solid var(--nb-border);"></div>
+          </div>
+          
+          <div class="nb-mt-6 nb-flex-col nb-gap-4">
+            <label class="nb-flex nb-items-center nb-gap-4" style="cursor: pointer;">
+              <input type="checkbox" id="chk-phase1" class="nb-progress-checkbox" style="width: 24px; height: 24px;">
+              <span class="nb-h3" style="margin: 0;">Phase 1: Fundamentals</span>
+            </label>
+            <label class="nb-flex nb-items-center nb-gap-4" style="cursor: pointer;">
+              <input type="checkbox" id="chk-phase2" class="nb-progress-checkbox" style="width: 24px; height: 24px;">
+              <span class="nb-h3" style="margin: 0;">Phase 2: Intermediate Concepts</span>
+            </label>
+            <label class="nb-flex nb-items-center nb-gap-4" style="cursor: pointer;">
+              <input type="checkbox" id="chk-phase3" class="nb-progress-checkbox" style="width: 24px; height: 24px;">
+              <span class="nb-h3" style="margin: 0;">Phase 3: Advanced Patterns</span>
+            </label>
+            <label class="nb-flex nb-items-center nb-gap-4" style="cursor: pointer;">
+              <input type="checkbox" id="chk-phase4" class="nb-progress-checkbox" style="width: 24px; height: 24px;">
+              <span class="nb-h3" style="margin: 0;">Phase 4: FAANG Mastery</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Final CTA -->
+    <section class="nb-section">
+      <div class="nb-container nb-text-center nb-reveal">
+        <h2 class="nb-display">Ready to Build?</h2>
+        <p class="nb-h3" style="margin: 0 auto; max-width: 600px;">Begin your 1-year journey to system design mastery.</p>
+        <div class="nb-flex nb-justify-center nb-gap-4 nb-mt-8">
+          <a href="https://github.com/indiser/System-Design-Projects" target="_blank" rel="noopener noreferrer" class="nb-button nb-button--primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            View on GitHub
+          </a>
+          <button onclick="window.scrollTo(0,0)" class="nb-button nb-button--secondary">Back to Top</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="nb-footer">
+    <div class="nb-container nb-flex nb-justify-between nb-items-center" style="flex-wrap: wrap; gap: 16px;">
+      <div class="nb-mono">
+        © 2026 System Design Roadmap
+      </div>
+      <div>
+        <a href="https://github.com/indiser/System-Design-Projects" class="nb-nav-link" style="margin-right: 16px;">Documentation</a>
+        <a href="mailto:indser01@gmail.com" class="nb-nav-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

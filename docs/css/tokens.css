@@ -1,0 +1,97 @@
+:root {
+  /* color */
+  --nb-bg: #F8F6F1;
+  --nb-surface: #FFFFFF;
+  --nb-surface-warm: #FFF4D6;
+  --nb-ink: #111111;
+  --nb-border: #000000;
+  --nb-accent-red: #E63946;
+  --nb-accent-blue: #CDE7FF;
+  --nb-accent-green: #B7F5C3;
+  --nb-accent-yellow: #FFE79B;
+  --nb-accent-purple: #E7D7FF;
+
+  /* spacing */
+  --nb-space-1: 4px;
+  --nb-space-2: 8px;
+  --nb-space-3: 12px;
+  --nb-space-4: 16px;
+  --nb-space-5: 24px;
+  --nb-space-6: 32px;
+  --nb-space-7: 48px;
+  --nb-space-8: 64px;
+  --nb-space-9: 80px;
+  --nb-space-10: 96px;
+  --nb-space-11: 120px;
+
+  /* radius / border */
+  --nb-radius-card: 20px;
+  --nb-radius-btn: 12px;
+  --nb-radius-pill: 999px;
+  --nb-border-w: 3px;
+  --nb-border-w-sm: 2px;
+
+  /* shadow */
+  --nb-shadow-sm: 4px 4px 0 var(--nb-border);
+  --nb-shadow-md: 6px 6px 0 var(--nb-border);
+  --nb-shadow-lg: 8px 8px 0 var(--nb-border);
+  --nb-shadow-hover: 10px 10px 0 var(--nb-border); /* Extrapolated from +4px spec */
+  --nb-shadow-pressed: 2px 2px 0 var(--nb-border);
+
+  /* motion */
+  --nb-duration-fast: 150ms;
+  --nb-duration-base: 200ms;
+  --nb-duration-slow: 250ms;
+  --nb-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --nb-ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --nb-delay-stagger: 60ms;
+
+  /* z-index */
+  --nb-z-base: 0;
+  --nb-z-card: 10;
+  --nb-z-nav: 100;
+  --nb-z-dropdown: 200;
+  --nb-z-tooltip: 300;
+  --nb-z-drawer: 400;
+  --nb-z-modal-overlay: 500;
+  --nb-z-modal: 510;
+  --nb-z-toast: 600;
+}
+
+[data-theme="dark"] {
+  --nb-bg: #121212;
+  --nb-surface: #1C1C1C;
+  --nb-surface-warm: #2A2410;
+  --nb-ink: #F5F5F5;
+  --nb-border: #F5F5F5;
+  --nb-accent-red: #FF6B75;
+  --nb-accent-blue: #8FBFE0;
+  --nb-accent-green: #7FD99A;
+  --nb-accent-yellow: #E0C066;
+  --nb-accent-purple: #C7A8F0;
+  
+  --nb-shadow-sm: 4px 4px 0 rgba(245,245,245,0.6);
+  --nb-shadow-md: 6px 6px 0 rgba(245,245,245,0.6);
+  --nb-shadow-lg: 8px 8px 0 rgba(245,245,245,0.6);
+  --nb-shadow-hover: 10px 10px 0 rgba(245,245,245,0.6);
+  --nb-shadow-pressed: 2px 2px 0 rgba(245,245,245,0.6);
+}
+
+@media (max-width: 480px) {
+  :root {
+    /* Reduce shadows by ~40% on mobile */
+    --nb-shadow-sm: 2px 2px 0 var(--nb-border);
+    --nb-shadow-md: 4px 4px 0 var(--nb-border);
+    --nb-shadow-lg: 5px 5px 0 var(--nb-border);
+    --nb-shadow-hover: 6px 6px 0 var(--nb-border);
+    --nb-shadow-pressed: 1px 1px 0 var(--nb-border);
+  }
+  
+  [data-theme="dark"] {
+    --nb-shadow-sm: 2px 2px 0 rgba(245,245,245,0.6);
+    --nb-shadow-md: 4px 4px 0 rgba(245,245,245,0.6);
+    --nb-shadow-lg: 5px 5px 0 rgba(245,245,245,0.6);
+    --nb-shadow-hover: 6px 6px 0 rgba(245,245,245,0.6);
+    --nb-shadow-pressed: 1px 1px 0 rgba(245,245,245,0.6);
+  }
+}
